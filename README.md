@@ -37,8 +37,10 @@ mysql -u root -p loan_engine < schema.sql
 
 The app is configured to run on port `9090` by default.
 
+### Run locally with Maven
+
 ```bash
-cd /Users/richie/Desktop/test
+cd test
 mvn spring-boot:run
 ```
 
@@ -47,11 +49,36 @@ mvn spring-boot:run
 Use the `test` profile to run with an in-memory H2 database instead of MySQL.
 
 ```bash
-cd /Users/richie/Desktop/test
+cd test
 mvn spring-boot:run -Dspring-boot.run.profiles=test
 ```
 
 Then open Swagger UI at:
+
+```text
+http://localhost:9090/swagger-ui/index.html
+```
+
+## Run with Docker
+
+Build and run the application with Docker Compose:
+
+```bash
+cd test
+docker compose up --build
+```
+
+This will start:
+- the Spring Boot application on `http://localhost:9090`
+- a PostgreSQL database container for local containerized testing
+
+You can also stop it with:
+
+```bash
+docker compose down
+```
+
+Swagger UI will be available at:
 
 ```text
 http://localhost:9090/swagger-ui/index.html

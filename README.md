@@ -26,7 +26,7 @@ This Spring Boot application implements a loan calculator with prepayment and ea
 CREATE DATABASE loan_engine;
 ```
 
-2. Update `src/main/resources/application.properties` with your MySQL credentials.
+2. Update `src/main/resources/application.yml` with your MySQL credentials.
 3. Run the schema script:
 
 ```bash
